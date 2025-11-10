@@ -13,6 +13,294 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Basic reset and utility classes (replacing Tailwind usage) */
+* { box-sizing: border-box; }
+img { max-width: 100%; height: auto; }
+
+.min-h-screen { min-height: 100vh; }
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.items-center { align-items: center; }
+.flex-1 { flex: 1 1 auto; }
+.text-center { text-align: center; }
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+.py-6 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+.text-3xl { font-size: 1.875rem; }
+.text-2xl { font-size: 1.5rem; }
+.font-bold { font-weight: 700; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-8 { margin-bottom: 2rem; }
+.mt-4 { margin-top: 1rem; }
+.mt-8 { margin-top: 2rem; }
+.text-sm { font-size: 0.875rem; }
+.text-xs { font-size: 0.75rem; }
+.text-gray-600 { color: #6b7280; }
+.text-gray-500 { color: #6b7280; }
+.leading-relaxed { line-height: 1.4; }
+.max-w-xs { max-width: 20rem; }
+.max-w-280 { max-width: 280px; }
+.w-full { width: 100%; }
+.gap-3 { gap: 0.75rem; }
+.rounded-lg { border-radius: 8px; }
+.shadow { box-shadow: 0 6px 8px rgba(0,0,0,0.12); }
+.btn { border: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
+.btn-brand { background-color: #16174F; color: #ffffff; padding: 0.625rem 1rem; border-radius: 8px; }
+.btn-brand .muted { opacity: 0.9; margin-right: 0.5rem; }
+.footer-brand { background-color: #16174F; height: 56px; }
+.header-brand { background-color: #16174F; color: #ffffff; }
+
+.mr-2 { margin-right: 0.5rem; }
+.font-semibold { font-weight: 600; }
+
+/* Page specific adjustments */
+.page-root { background-color: #ffffff; color: #213547; min-width: 320px; }
+.login-main { padding: 2rem 1rem; }
+.muted-small { color: #6b7280; }
+.link-brand { color: #16174F; font-weight: 600; text-decoration: none; }
+.legal { color: #9ca3af; }
+
+/* accessibility focus */
+.btn:focus { outline: 3px solid rgba(100,103,255,0.2); }
+
+/* Layout for desktop-like full-width header/footer and centered content */
+.site-header { background-color: #16174F; color: #ffffff; height: 72px; display: flex; align-items: center; justify-content: center; }
+.site-footer { background-color: #16174F; height: 56px; }
+.page-wrapper { min-height: calc(100vh - 128px); display: flex; align-items: center; justify-content: center; background-color: #ffffff; }
+.container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 2rem; }
+.card { 
+  --g: 20px;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfd 100%); 
+  padding: 56px 40px; 
+  border-radius: 14px; 
+  border: 1px solid rgba(10, 10, 30, 0.04);
+  box-shadow: 0 20px 40px rgba(12, 17, 43, 0.08), inset 0 1px 0 rgba(255,255,255,0.6);
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--g));
+}
+
+/* Buttons adjusted for desktop look */
+.btn { padding: 0.75rem 1rem; border-radius: 10px; }
+.btn-brand { background-color: #16174F; color: #ffffff; padding: 0.75rem 1rem; border-radius: 10px; }
+.w-full { width: 100%; }
+
+/* Ensure text sizes for desktop */
+.header-title { font-size: 1.75rem; }
+.card-title { font-size: 1.5rem; }
+
+@media (min-width: 768px) {
+  .card { padding: 56px 48px; }
+  .container { padding: 3rem; }
+}
+
+/* Frame around the whole page to mimic the screenshot border */
+.frame {
+  min-height: 100vh;
+  background: #0b1b6b; /* outer frame color */
+  padding: 6px; /* thin border effect */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make the header text larger and with a subtle inner border */
+.site-header { border-bottom: 4px solid #0831b8; }
+.site-footer { border-top: 4px solid #0831b8; }
+
+/* Slightly reduce card width on very wide screens to match screenshot spacing */
+@media (min-width: 1200px) {
+  .container { max-width: 900px; }
+}
+
+/* thin divider line */
+.divider {
+  height: 1px;
+  background: #e5e7eb;
+  margin: 28px 0;
+  width: 100%;
+}
+
+/* Login content specific styles */
+.login-content { text-align: center; }
+.title { font-size: 1.7rem; margin: 0 0 6px; font-weight: 800; color: #0f172a; letter-spacing: -0.02em; }
+.subtitle { color: #6b7280; margin-bottom: 20px; font-size: 0.95rem; }
+.btn-group { display: flex; flex-direction: column; gap: 14px; }
+.btn { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; font-size: 1rem; border-radius: 10px; }
+.left { opacity: 0.95; font-size: 0.95rem; }
+.right { font-weight: 700; }
+.register-text { color: #374151; margin-top: 20px; }
+.terms { color: #9ca3af; font-size: 0.78rem; }
+
+/* Button appearance */
+.btn-brand {
+  background: linear-gradient(180deg,#17164b 0%, #201c67 100%);
+  color: #fff;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
+}
+.btn-brand:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(14,16,50,0.18); }
+.btn-brand:active { transform: translateY(0); }
+
+/* subtle muted text for left label inside button */
+.muted { color: rgba(255,255,255,0.85); opacity: 0.95; }
+
+/* Divider tweaks */
+.divider { margin: 30px 0; opacity: 0.9; }
+
+/* Legal and register link style */
+.link-brand { color: #1f2bd6; font-weight: 700; text-decoration: none; }
+.link-brand:hover { text-decoration: underline; }
+
+/* Form field styles for consistent spacing */
+.form-field { display: flex; flex-direction: column; align-items: stretch; text-align: left; gap: 8px; }
+.form-field label { font-size: 0.9rem; color: #374151; }
+.form-field input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(15,23,42,0.04);
+  background: #2f2f2f;
+  color: #fff;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+}
+.form-field input::placeholder { color: rgba(255,255,255,0.65); }
+.form-field input:focus { outline: none; box-shadow: 0 6px 18px rgba(31,41,55,0.06); border-color: rgba(31,41,55,0.08); }
+
+/* Ensure consistent vertical rhythm inside card */
+.card > * { margin: 0; }
+.card .card-title { margin-top: 0; }
+.card .muted-small { margin-bottom: 6px; }
+.card .form-field { margin-top: 6px; }
+.card .btn { margin-top: 6px; }
+
+/* Login submit button specific */
+.btn-submit { background: linear-gradient(180deg,#1b1450 0%, #261a6a 100%); color: #fff; border-radius: 12px; padding: 14px; font-weight:700; }
+
+/* provider buttons centered under submit with equal spacing */
+.provider-wrapper { display:flex; flex-direction:column; gap:14px; align-items:center; margin-top: 8px; transform: translateY(-8px); }
+.provider-wrapper .btn { width: 240px; }
+
+/* provider button base */
+.provider-btn {
+  display:flex;
+  align-items:center;
+  /* center the visible label while keeping the icon on the left */
+  justify-content:center;
+  gap:12px;
+  width: 260px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  position: relative;
+  padding-left: 52px; /* leave space for left icon placed absolutely */
+}
+
+/* Google style: white background, subtle border, left mark + text */
+.provider-google {
+  background: #fff;
+  color: #111827;
+  border: 1px solid #e6e7ee;
+}
+.provider-google .provider-left { display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; position: absolute; left: 12px; }
+.provider-google .provider-label { margin-left:0; font-weight:700; letter-spacing:0.01em; text-align:center; width:100%; }
+
+/* LinkedIn style: blue brand, white text; make same size as Google */
+.provider-linkedin {
+  background: #0A66C2;
+  color: #ffffff;
+  border: 1px solid rgba(0,0,0,0.06);
+  justify-content:flex-start;
+}
+.provider-linkedin .provider-left { display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; position: absolute; left: 12px; background: #084b86; border-radius:6px; }
+.provider-linkedin .provider-label { font-weight:700; text-align:center; width:100%; }
+
+/* ensure both provider buttons visually equal width and centered */
+.provider-wrapper { align-items:center; }
+.provider-btn { box-shadow: 0 6px 14px rgba(2,6,23,0.08); }
+
+/* hover states */
+.provider-google:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(2,6,23,0.08); }
+.provider-linkedin:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(2,6,23,0.08); }
+
+/* 'หรือ' separator with lines either side */
+.or-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  margin: 20px 0;
+}
+.or-container::before,
+.or-container::after {
+  content: '';
+  flex: 1 1 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(15,23,42,0.06), rgba(15,23,42,0.02));
+  border-radius: 1px;
+}
+.or-text {
+  display: inline-block;
+  padding: 6px 14px;
+  background: #fff; /* same as card bg so it appears cut-out */
+  color: #6b7280;
+  font-weight: 600;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+/* center the header title text properly */
+.header-title { font-weight: 700; color: #fff; }
+
+/* Form styles */
+.form-group {
+  width: 100%;
+  max-width: 320px;
+  margin: 24px auto 0;
+}
+
+.form-field {
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  color: #111827;
+  background: #fff;
+  transition: border-color 0.15s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #16174F;
+  box-shadow: 0 0 0 3px rgba(22, 23, 79, 0.1);
+}
+
+.form-input::placeholder {
+  color: #9ca3af;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -22,12 +310,15 @@ a:hover {
   color: #535bf2;
 }
 
+html, body {
+  height: 100%;
+}
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  width: 100%;
+  background: #111827; /* dark page background outside the framed app */
 }
 
 h1 {
@@ -65,4 +356,158 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+.register-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+}
+
+.form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.form-field2 {
+  text-align: left;
+}
+
+.form-field2 label {
+  font-size: 0.875rem;
+  color: #374151;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.form-field2 input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  font-size: 0.95rem;
+  transition: border 0.22s ease;
+}
+
+.form-field2 input:focus {
+  border-color: #6366f1; /* สีม่วงฟีล product */
+}
+
+.login-text {
+  font-size: 0.875rem;
+  margin-top: 1rem;
+}
+/* Form field styles */
+.form-field { 
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+  margin-bottom: 14px;
+}
+
+.form-field label { 
+  font-size: 0.95rem;
+  color: #374151;
+  margin-bottom: 2px;
+}
+
+.form-field input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 6px;
+  border: none;
+  background: #2f2f2f;
+  color: #fff;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+}
+
+.form-field input::placeholder { 
+  color: rgba(255,255,255,0.5);
+  font-size: 0.9rem;
+}
+
+.form-field input:focus { 
+  outline: none;
+  background: #363636;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Card styles */
+.card { 
+  --g: 16px;
+  gap: var(--g);
+  padding: 48px 32px;
+  width: 100%;
+  max-width: 460px;
+}
+
+.card > * { 
+  margin: 0;
+  width: 100%;
+}
+
+.card h1 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.card .subtitle {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+/* Submit button */
+.btn-submit { 
+  background: #16174F;
+  color: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-top: 6px;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+.btn-submit:hover {
+  background: #1d1e5f;
+}
+.divider-or {
+  
+    display: flex; 
+   
+    align-items: center; 
+    
+    margin: 20px 0; 
+    text-align: center;
+    font-size: 14px;
+    color: #888; 
+}
+
+.divider-or::before,
+.divider-or::after {
+    content: ''; 
+   
+    flex: 1; 
+
+    border-bottom: 1px solid #ddd; 
+}
+
+.divider-or span {
+ 
+    padding: 0 10px; 
+   
+    background-color: white; 
 }
