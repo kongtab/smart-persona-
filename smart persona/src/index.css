@@ -948,3 +948,22 @@ button:focus-visible {
   z-index: 10; 
 }
 
+.google-btn {
+  width: 260px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #e6e7ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: 0.2s;
+}
+
+.google-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(2,6,23,0.08);
+}
