@@ -41,24 +41,24 @@ export default function LoginPage() {
                 ดำเนินการด้วยบัญชี Google
               </button>
 
-                  <button className="google-btn">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                      focusable="false"
-                      role="img"
-                    >
-                      <path fill="#0A66C2" d="M22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 
+              <button className="google-btn">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  focusable="false"
+                  role="img"
+                >
+                  <path fill="#0A66C2" d="M22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 
           0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0z"/>
-                      <path fill="#fff" d="M7.09 20.45H3.56V9h3.53v11.45zM5.33 7.59c-1.13 0-2.05-.91-2.05-2.04a2.05 
+                  <path fill="#fff" d="M7.09 20.45H3.56V9h3.53v11.45zM5.33 7.59c-1.13 0-2.05-.91-2.05-2.04a2.05 
           2.05 0 1 1 4.1 0c0 1.13-.92 2.04-2.05 2.04zm15.12 12.86h-3.53v-5.6c0-1.33-.03-3.04-1.85-3.04-1.85 
           0-2.13 1.45-2.13 2.95v5.69h-3.53V9h3.39v1.56h.05c.47-.9 1.62-1.85 3.34-1.85 3.57 0 4.23 2.35 4.23 
           5.41v6.33z"/>
-                    </svg>
-                    ดำเนินการต่อด้วยบัญชี LinkedIn
+                </svg>
+                ดำเนินการต่อด้วยบัญชี LinkedIn
               </button>
 
             </div>

@@ -223,7 +223,9 @@ header > .container { padding-top: 8px; padding-bottom: 20px; }
   color: #111827;
   border: 1px solid #e6e7ee;
   padding-left: 52px;
+  
 }
+
 .provider-google .provider-left { display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; position: absolute; left: 3px; }
 .provider-google .provider-label { margin-left:0; font-weight:700; letter-spacing:0.01em; text-align:center; width:100%; }
 
@@ -946,24 +948,4 @@ button:focus-visible {
   cursor: pointer;
   text-align: right; 
   z-index: 10; 
-}
-
-.google-btn {
-  width: 260px;
-  padding: 10px 14px;
-  border-radius: 10px;
-  background: #ffffff;
-  border: 1px solid #e6e7ee;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  cursor: pointer;
-  font-size: 0.95rem;
-  transition: 0.2s;
-}
-
-.google-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(2,6,23,0.08);
 }
