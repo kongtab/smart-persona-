@@ -151,5 +151,4 @@ const Dashboard = () => {
         </div>
     );
 };
-      wave123456
 export default Dashboard;
