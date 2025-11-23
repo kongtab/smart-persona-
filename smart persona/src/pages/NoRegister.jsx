@@ -5,5 +5,5 @@ function NoRegister() {
         </>
      );
 }
-
+  
 export default NoRegister;
